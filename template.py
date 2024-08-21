@@ -21,11 +21,11 @@ list_of_files = [
 
 
 for filepath in list_of_files:
-   filepath = Path(filepath)
-   filedir, filename = os.path.split(filepath)
+   filepath = Path(filepath) # convert to path
+   filedir, filename = os.path.split(filepath) # separate my folders and files
 
    if filedir !="":
-      os.makedirs(filedir, exist_ok=True)
+      os.makedirs(filedir, exist_ok=True) # create directory/folder
       logging.info(f"Creating directory; {filedir} for the file {filename}")
 
    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
